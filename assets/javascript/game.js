@@ -1,5 +1,5 @@
 //Array of Pokemon
-var thePokemon = ["Bulbasaur", "Charmander", "Squirtle", "Pikachu", "Oddish", "Tangela", "Snorlax", "Dragonite", "Mimikyu", "Lickitung"];
+var thePokemon = ["Bulbasaur", "Charmander", "Squirtle", "Pikachu", "Oddish", "Tangela", "Snorlax", "Dragonite", "Haunter", "Lickitung"];
 
 //Tracking data
 var wins = 0;
