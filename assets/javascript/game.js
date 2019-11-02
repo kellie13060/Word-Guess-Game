@@ -31,11 +31,21 @@ function assignWord() {
 };
 
 document.onkeyup = function(event){
- var curWrdExist = currentWord.indexOf(event.key);
- var alreadyGuessed = answerArray.indexOf(event.key);
- console.log(curWrdExist);
+  var curWrdExist = currentWord.indexOf(event.key);
+  var alreadyGuessed = answerArray.indexOf(event.key);
+  console.log(curWrdExist);
     //what key was pressed
- var userGuess = event.key;
+  var userGuess = event.key;
+
+  if (currentWord.indexOf(event.key) !== -1) {
+    answerArray[currentWord.indexOf(event.key)] = event.key;
+    console.log(answerArray);
+    guessWord.textContent = answerArray;
+  } else if(answerArray.indexOf(event.key) == true){
+
+  } else {
+
+  };
 
 
 

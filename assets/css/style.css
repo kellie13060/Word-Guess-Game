@@ -1,0 +1,36 @@
+html, body { 
+    margin: 0px;
+    height: 100%;
+    background-image: url(../images/back2.png);
+    background-repeat: no-repeat;
+    background-size: 100%
+}
+
+.jumbotron {
+    height: 100px;
+    padding: 10px;
+}
+
+.display-4{
+    color: white;
+    font-size: 40px;
+    font-family: Impact, fantasy;
+}
+
+.lead {
+    color: white;
+}
+
+.hangContent {
+    height: 400px;
+    width: 600px;
+    background: grey;
+    
+    border-radius: 20px;
+    margin: 50px auto auto 75px;
+}
+
+#fonts {
+    color: white;
+    font-weight: bold;
+}

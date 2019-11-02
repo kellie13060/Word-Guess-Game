@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <title>Pokemon Hangman!</title>
     <meta charset="UTF-8">
-    <title>Hangman!</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
   </head>
-  <body onload="assignWord()" background="./assets/images/loadBack.jpg">
+  
+  <body>
+   <div class="container">
+        <p class="display-4">Pokemon Hangman</p>
+        
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-8 hangContent">
+            
+              <p id="fonts">Press any letter to start guessing!</p>
+              <p onload="assignWord()"></p>
+           
+          </div>
+      </div>
 
-    <h1 id="directions">Press any key to get started!</h1>
+    </div>
+    
 
     <p id="guessWord"></p>
     <p id="userGuesses"></p>
