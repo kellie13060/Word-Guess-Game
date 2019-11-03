@@ -10,28 +10,45 @@
     
   </head>
   
-  <body>
+  <body onload="assignWord()">
    <div class="container">
         <p class="display-4">Pokemon Hangman</p>
         
     </div>
     <div class="container">
       <div class="row">
-          <div class="col-8 hangContent">
+          <div class="col-6" id="hangContent">
             
-              <p id="fonts">Press any letter to start guessing!</p>
-              <p onload="assignWord()"></p>
+              <p class="headingFonts">Press any letter to start guessing!</p><hr>
+              </br>
+             <p id="guessWord"></p>
            
           </div>
       </div>
-
+      <div class="row">
+          <div class="col-2"></div>
+          <div class="col-2 data"  id="winsBox">
+            <p class="headingFonts">Wins</p>
+            <hr>
+            <p class="headingFonts" id="wins">O</p>
+          </div>
+          <div class="col-2 data" id="guessBox">
+            <p class="headingFonts">Guesses</p>
+            <p class="headingFonts">Remaining</p>
+            <hr>
+            <p class="headingFonts" id="guessesRemaining">8</p>
+          </div>
+          <div class="col-4" id="wrongContent">
+            <p class="headingFonts">Incorrect Guesses</p><hr>
+            <p class="headingFonts" id="userIncorrectGuesses"></p>
+          </div>
+      </div>  
     </div>
     
 
-    <p id="guessWord"></p>
-    <p id="userGuesses"></p>
-    <p id="wins"></p>
-    <p id="guessesRemaining"></p>
+    
+    
+  
     
 
 

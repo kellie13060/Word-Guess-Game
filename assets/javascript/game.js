@@ -1,84 +1,98 @@
 //Array of Pokemon
-var thePokemon = ["Bulbasaur", "Charmander", "Squirtle", "Pikachu", "Oddish", "Tangela", "Snorlax", "Dragonite", "Haunter", "Lickitung"];
-
+var thePokemon = ["bulbasaur", "charmander", "squirtle", "pikachu", "oddish", "tangela", "snorlax", "dragonite", "haunter", "lickitung"];
+var theBackgrounds = ["bulba.jpg", "char.jpg", "squirt.jpg", "pika.jpg", "odd.jpg", "tang.jpg", "snor.jpg", "dragon.jpg", "haunt.jpg", "lick.jpg"];
 //Tracking data
 var wins = 0;
-var bodyParts = 0;
-var ties = 0;
+var remainingGuesses = 8;
 var currentWord;
+var lowerCaseWord;
+var pokemonIndex;
 var answerArray = [];
-
-//letters guessed by users 
-var storedGuesses= [];
+var wrongAnswerArray = [];
+var wordLength;
 
 var guessWord = document.getElementById("guessWord");
 var wins = document.getElementById("wins");
 var guessesRemaining = document.getElementById("guessesRemaining");
-var userGuesses = document.getElementById("userGuesses");
+var userIncorrectGuesses = document.getElementById("userIncorrectGuesses");
+var pokeBack = document.getElementsByTagName("body")[0];
+console.log(pokeBack);
 
 
 //I choose you!
 function assignWord() {
-  currentWord = thePokemon[Math.floor(Math.random() * thePokemon.length)];
-  
+  var randomNumber = Math.floor(Math.random() * thePokemon.length);
+  currentWord = thePokemon[randomNumber];
+  console.log(pokemonIndex);
+  pokemonIndex = randomNumber;
+  console.log(pokemonIndex);
+  wordLength = currentWord.length;
+  console.log(wordLength);
+  console.log(currentWord);
+  lowerCaseWord = currentWord.toLowerCase();
+  console.log(lowerCaseWord);
   //determining how many letters the chosen pokemon is 
-  for (var i = 0; i < currentWord.length; i++){
+  for (var i = 0; i < currentWord.length; i++) {
     answerArray[i] = "_";
   }
   //putting spaces bettwen the letters and removing commas
-  guessWord.textContent = answerArray.join("   ");
+ guessWord.textContent = answerArray.join("   ");
 
 };
 
-document.onkeyup = function(event){
-  var curWrdExist = currentWord.indexOf(event.key);
-  var alreadyGuessed = answerArray.indexOf(event.key);
-  console.log(curWrdExist);
-    //what key was pressed
+document.onkeyup = function (event) {
   var userGuess = event.key;
 
-  if (currentWord.indexOf(event.key) !== -1) {
-    answerArray[currentWord.indexOf(event.key)] = event.key;
-    console.log(answerArray);
-    guessWord.textContent = answerArray;
-  } else if(answerArray.indexOf(event.key) == true){
+    //first check to see if the letter is on the page
+  if (answerArray.indexOf(userGuess) !== -1 || wrongAnswerArray.indexOf(userGuess) !== -1 ){
+    console.log("hit1");
 
   } else {
-
-  };
-
-
-
-
-//check to see if key pushed is in word and check to see if already been guessed (if already pressed doesn't use a turn)
-
-
-//show letter in word or log in array
-
-//pushing letter pressed to array
-storedGuesses.push(userGuess);
-
+    //if not on the page we are putting on the page where it goes (in one of the arrays)
+    console.log("hit2");
+    if (lowerCaseWord.indexOf(userGuess) !== -1) {
+      for (var i=0; i < currentWord.length; i++) {
+        if(currentWord[i] === userGuess) {
+          answerArray[i] = currentWord[i];
+          wordLength -= 1;
+          console.log(wordLength);
+          
+        }
+      }
+      answerArray[lowerCaseWord.indexOf(userGuess)] = currentWord[lowerCaseWord.indexOf(userGuess)];
+      guessWord.textContent = answerArray.join("   ");
+      console.log("letter")
+    }
+  }
 };
-    
+  
 
+  //track how many wins
+//   if (wordLength > 0 && remainingGuesses > 0) {
+//     if (lowerCaseWord.indexOf(event.key) !== -1 && lowerCaseWord.indexOf(event.key) && wrongAnswerArray.indexOf(event.key)) {
+//       console.log(!lowerCaseWord.indexOf(event.key));
+//       for (var i = 0; i <= currentWord.length; i++) {
+//         if (lowerCaseWord[i] === event.key) {
+//           answerArray[i] = currentWord[i];
+//           guessWord.textContent = answerArray.join("   ");
+//           wordLength -= 1;
+//           console.log(wordLength);
+//         };
+//       }; 
+//     } else if (wrongAnswerArray.indexOf(event.key) === -1) {
+//       wrongAnswerArray.push(event.key.toLowerCase());
+//       userIncorrectGuesses.textContent = wrongAnswerArray.join("   ");
+//       console.log(wrongAnswerArray);
+//       remainingGuesses -= 1;
+//       guessesRemaining.textContent = remainingGuesses;
+//       console.log(remainingGuesses);
+//     } else {};
+//   } else if (wordLength <= 1 && remainingGuesses > 0) {
+//     pokeBack.style.backgroundImage = "url(assets/images/" + theBackgrounds[pokemonIndex] + ")";
+//     setTimeout("location.reload(true);", 3000);
 
-
-
-
-
-
-
-
-
-
-//track how many wins
-
-        //display the word like this _ _ _ _ _ _ _ 
-
-        //Revel the words as the user guess them
-
-        //Number of guesses remaining
-
-        //letters already guessed
-
-        //auto restart with a new word
+//   } else {
+//     alert("You lose! Wait 1 second to start again.");
+//     setTimeout("location.reload(true);", 1000);
+//   };
+// };
