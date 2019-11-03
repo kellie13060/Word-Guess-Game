@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>Pokemon Hangman!</title>
-    <meta charset="UTF-8">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
-  </head>
-  
-  <body onload="assignWord()">
-   <div class="container">
-        <p class="display-4">Pokemon Hangman</p>
-        
-    </div>
-    <div class="container">
-      <div class="row">
-          <div class="col-6" id="hangContent">
-            
-              <p class="headingFonts">Press any letter to start guessing!</p><hr>
-              </br>
-             <p id="guessWord"></p>
-           
-          </div>
+
+<head>
+  <title>Pokemon Hangman!</title>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body onload="assignWord()">
+  <div class="container">
+    <p class="display-4">Pokemon Hangman</p>
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6" id="hangContent">
+
+        <p class="headingFonts">Press any letter to start guessing!</p>
+        <hr>
+        </br>
+        <p id="guessWord"></p>
+
       </div>
-      <div class="row">
-          <div class="col-2"></div>
-          <div class="col-2 data"  id="winsBox">
-            <p class="headingFonts">Wins</p>
-            <hr>
-            <p class="headingFonts" id="wins">O</p>
-          </div>
-          <div class="col-2 data" id="guessBox">
-            <p class="headingFonts">Guesses</p>
-            <p class="headingFonts">Remaining</p>
-            <hr>
-            <p class="headingFonts" id="guessesRemaining">8</p>
-          </div>
-          <div class="col-4" id="wrongContent">
-            <p class="headingFonts">Incorrect Guesses</p><hr>
-            <p class="headingFonts" id="userIncorrectGuesses"></p>
-          </div>
-      </div>  
     </div>
-    
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-2 data" id="winsBox">
+        <p class="headingFonts">Wins</p>
+        <hr>
+        <p class="headingFonts" id="wins">O</p>
+      </div>
+      <div class="col-2 data" id="guessBox">
+        <p class="headingFonts">Guesses</p>
+        <p class="headingFonts">Remaining</p>
+        <hr>
+        <p class="headingFonts" id="guessesRemaining">8</p>
+      </div>
+      <div class="col-4" id="wrongContent">
+        <p class="headingFonts">Incorrect Guesses</p>
+        <hr>
+        <p class="headingFonts" id="userIncorrectGuesses"></p>
+      </div>
+    </div>
+  </div>
 
-    
-    
-  
-    
 
 
 
-    <script src = "assets/javascript/game.js">
 
-    </script>
 
-  </body>
+
+
+
+  <script src="assets/javascript/game.js">
+
+  </script>
+
+</body>
+
 </html>
 
 <!-- Play a sound or song when the user guesses their word correctly, like in our demo.
